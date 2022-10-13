@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8349edb895168dc49b41917b36a9a51e, type: 3}
   m_Name: Character Sound Event
   m_EditorClassIdentifier: 
-  enabled: 0
+  enabled: 1

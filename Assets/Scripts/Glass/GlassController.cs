@@ -1,13 +1,22 @@
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class GlassController : MonoBehaviour
 {
     [Header("Movement")]
+    [SerializeField] private PositionConstraint positionConstraint;
     [SerializeField] private BlobMovement blobMovement;
     [SerializeField] private ETextile textile;
     [SerializeField] private Bounds movementBounds;
 
+    [Header("Rendering")]
     [SerializeField] private GlassRenderingManager glassRendering;
+
+    [Header("Events")]
+    [SerializeField] private VoidGameEvent stepRatioEvent;
+
+
+    [Header("Throw")]
     [SerializeField] private Vector3 throwDirection; // TODO: probably replace with target
     [SerializeField] private float throwForceMultiplier = 100f;
     [SerializeField] private float throwMinMagnitude = 100f;
@@ -19,15 +28,49 @@ public class GlassController : MonoBehaviour
     [SerializeField] private bool useMouseMovement = false;
 
     private Rigidbody rb;
+    private float nextFill;
 	
     private void Awake() {
 	    rb = GetComponent<Rigidbody>();
+    }
+
+    private void Start() {
         IsRaised = false;
+        nextFill = 0f;
+        glassRendering.SetLiquidFillRatio(0f);
+    }
+
+    private void OnEnable() {
+        stepRatioEvent.AddCallback(OnStepRatioEvent);
     }
 
     private void Update() {
         UpdateThrow();
         UpdatePosition();
+    }
+
+    private void OnStepRatioEvent() {
+        if (IsRaised) {
+            return;
+        }
+        
+        if (GameManager.instance.CurrentStep == GameManager.GameStep.FILL) {
+            glassRendering.SetLiquidFillRatio(nextFill);
+            UpdateStepFill();
+        } else if (GameManager.instance.CurrentStep == GameManager.GameStep.CLEAN) {
+            // TODO : increase clean ratio (somehow)
+            UpdateStepFill();
+        }
+    }
+
+    private void UpdateStepFill() {
+        if (nextFill >= 1.0f) {
+            GameManager.instance.NextStep();
+            positionConstraint.constraintActive = true;
+            nextFill = 0f;
+        } else {
+            nextFill = Mathf.Min(1.0f, nextFill + 0.1f);
+        }
     }
 
     private void UpdateThrow() {
@@ -99,5 +142,9 @@ public class GlassController : MonoBehaviour
             Gizmos.color = Color.blue;
             Gizmos.DrawWireCube(movementBounds.center, movementBounds.size);
         }
+    }
+
+    private void OnDisable() {
+        stepRatioEvent.RemoveCallback(OnStepRatioEvent);
     }
 }

@@ -118,5 +118,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textile: {fileID: 2832440407024739345}
-  trackedVelocitiesCount: 25
+  trackedVelocitiesCount: 50
   showDebug: 1

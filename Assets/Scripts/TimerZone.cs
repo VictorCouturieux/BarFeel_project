@@ -7,6 +7,7 @@ public class TimerZone : MonoBehaviour
     private Collider _collider;
     [SerializeField] private PositionConstraint _positionConstraint;
     [SerializeField] private float timerDurationInSec = 2;
+    [SerializeField] private VoidGameEvent stepRatioEvent;
 
     private float timer = 0;
     
@@ -18,12 +19,12 @@ public class TimerZone : MonoBehaviour
 
     private void OnTriggerStay(Collider collision) {
         if (collision.gameObject.CompareTag("Glass")) {
-            timer += Time.deltaTime;
+            timer += Time.fixedDeltaTime;
             if (timer >= timerDurationInSec) {
+                Debug.Log("CALL STEP FILL");
                 //Debug.Log("Timer Down");
                 //todo : increase step completion for glass
-                GameManager.instance.NextStep();
-                _positionConstraint.constraintActive = true;
+                stepRatioEvent.Call();
                 timer = 0;
             }
         }

@@ -60,3 +60,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _positionConstraint: {fileID: 0}
   timerDurationInSec: 2
+  stepRatioEvent: {fileID: 11400000, guid: 4902c1647d30255459813164d0f4e40e, type: 2}

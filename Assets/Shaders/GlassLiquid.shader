@@ -11,7 +11,10 @@ Shader "Unlit/Glass Liquid"
 
     SubShader
     {
-        Tags { "RenderType"="Transparent" }
+        Tags { 
+            "RenderType"="Transparent"
+            "Queue"="Transparent"
+        }
         Blend SrcAlpha OneMinusSrcAlpha
         Cull Off
 

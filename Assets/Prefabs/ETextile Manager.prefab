@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2832440407024739357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2832440407024739346}
+  - component: {fileID: 2832440407024739344}
+  - component: {fileID: 2832440407024739347}
+  - component: {fileID: 2832440407024739345}
+  - component: {fileID: 2832440407024739350}
+  m_Layer: 0
+  m_Name: ETextile Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2832440407024739346
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2832440407024739357}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2832440407024739344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2832440407024739357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f66c2cce04c1f4a21a3287582dde7774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NotifyData: 0
+  SkipFirstLine: 0
+  NotifyLines: 0
+  RememberLines: 0
+  NotifyValues: 1
+  ValuesSeparator: 9
+--- !u!114 &2832440407024739347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2832440407024739357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7fb94e6c0634c8e8e8db420e0c5b4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portNames:
+  - COM5
+  - COM4
+  speed: 230400
+  logDebugInfos: 0
+--- !u!114 &2832440407024739345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2832440407024739357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 464b511bc4054334397c7c14dade117e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textileAreaSize: {x: 58, y: 58}
+  blobCoordsOffset: {x: 29.13, y: -1.15}
+  doSwapXY: 0
+  doInvertX: 0
+  doInvertY: 1
+  blobMinimumDepth: 10
+  normalizeCoords: 1
+  maxInactiveTime: 0.3
+  inactiveUpdateDelay: 0.05
+  showDebug: 0
+  showOnlyAverage: 0
+  showBlobSize: 0
+  debugColors:
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 1, g: 0.4136189, b: 0, a: 1}
+  - {r: 1, g: 0.88759816, b: 0, a: 1}
+  - {r: 0.1452893, g: 1, b: 0, a: 1}
+  - {r: 0, g: 1, b: 1, a: 1}
+  - {r: 0, g: 0.5821352, b: 1, a: 1}
+  - {r: 0.044875145, g: 0, b: 1, a: 1}
+  - {r: 0.7239251, g: 0, b: 1, a: 1}
+  - {r: 1, g: 0, b: 0.87304306, a: 1}
+  averageBlobDebugColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &2832440407024739350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2832440407024739357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21f8ad79ae1914a44acce1bd855eb792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textile: {fileID: 2832440407024739345}
+  trackedVelocitiesCount: 25
+  showDebug: 1

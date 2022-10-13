@@ -34,7 +34,7 @@ public class BlobMovement : MonoBehaviour
         latestVelocities.Dequeue();
         if (textile.GetAverageBlob(out averageBlob)) {
             if (!noPos) {
-                latestVelocities.Enqueue(averageBlob.centroid - latestBlobPos);
+                latestVelocities.Enqueue((averageBlob.centroid - latestBlobPos) / Time.deltaTime);
             } else {
                 latestVelocities.Enqueue(Vector2.zero);
             }
@@ -49,7 +49,7 @@ public class BlobMovement : MonoBehaviour
 #if UNITY_EDITOR
     private void OnDrawGizmos() {
         if (showDebug && (latestVelocities != null)) {
-            Gizmos.DrawLine(transform.position, transform.position + ((Vector3)GetAverageVelocity()) * 20);
+            Gizmos.DrawLine(transform.position, transform.position + ((Vector3)GetAverageVelocity()));
         }
     }
 #endif

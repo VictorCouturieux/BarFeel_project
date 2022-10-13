@@ -27,6 +27,8 @@ public class CharacterSoundManager : MonoBehaviour
 public struct CharacterSoundList {
     public CharacterType characterType;
     public AudioClip[] drinking;
+    public AudioClip[] enter;
+    public AudioClip[] exit;
     public AudioClip[] ordering;
     public AudioClip[] randomNoises;
     public AudioClip[] satisfied;
@@ -36,6 +38,10 @@ public struct CharacterSoundList {
         switch (type) {
             case CharacterSoundType.DRINKING:
                 return drinking[Random.Range(0, drinking.Length)];
+            case CharacterSoundType.ENTER:
+                return enter[Random.Range(0, enter.Length)];
+            case CharacterSoundType.EXIT:
+                return exit[Random.Range(0, exit.Length)];
             case CharacterSoundType.ORDERING:
                 return ordering[Random.Range(0, ordering.Length)];
             case CharacterSoundType.SATISFIED:
@@ -51,6 +57,8 @@ public struct CharacterSoundList {
 [System.Serializable]
 public enum CharacterSoundType {
     DRINKING,
+    ENTER,
+    EXIT,
     ORDERING,
     RANDOM_NOISES,
     SATISFIED,

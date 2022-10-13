@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7169973192794148474
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7169973192794148477}
+  - component: {fileID: 7169973192794148476}
+  m_Layer: 0
+  m_Name: Player Sound Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7169973192794148477
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7169973192794148474}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7169973192794148476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7169973192794148474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7a36472427242446a813d76c7b5f74b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSoundEvent: {fileID: 11400000, guid: 572c4ca0387d20e469939672cbfa100c, type: 2}
+  clean:
+  - {fileID: 8300000, guid: d0f4f401b11ad144a85a1367f60b1b76, type: 3}
+  - {fileID: 8300000, guid: fc46f8734bb64904a86a3cbd5ae98677, type: 3}
+  - {fileID: 8300000, guid: 24842a55d2a678742b10fe1ab7fab9f5, type: 3}
+  - {fileID: 8300000, guid: d8cb733771b274d4396ef0a3d51f8749, type: 3}
+  glassFill:
+  - {fileID: 8300000, guid: 0435461cc1710cb47a822106743e53e7, type: 3}
+  - {fileID: 8300000, guid: a84e7e38aa31a9b4a8d81489ceed23d5, type: 3}
+  - {fileID: 8300000, guid: 60db13f95b44e1a44bcc8529d8e1d5f6, type: 3}
+  - {fileID: 8300000, guid: 18b31501e93375240a42f53d2540206b, type: 3}
+  - {fileID: 8300000, guid: bf9129247cbbecc4fae20cedb3030f26, type: 3}
+  glassGrab:
+  - {fileID: 8300000, guid: af5019f843867904da8e9936361ea2a6, type: 3}
+  - {fileID: 8300000, guid: f0fc19b45a839024a9a6866a4c20c1ba, type: 3}
+  - {fileID: 8300000, guid: 00fa4b740a333ae45a03f8201cc0c6b5, type: 3}
+  - {fileID: 8300000, guid: 54fae660780df434d96f6e45090b65ac, type: 3}
+  glassLaunch:
+  - {fileID: 8300000, guid: e43eec1914b03e74db2210270758324d, type: 3}
+  - {fileID: 8300000, guid: dfa8ba1f255bc3840b1421fcd1840966, type: 3}
+  - {fileID: 8300000, guid: dbfc7c0a3dc8a464da631e887d2c0469, type: 3}
+  - {fileID: 8300000, guid: c81cd10685cb92445be4954d2b90520b, type: 3}
+  - {fileID: 8300000, guid: 039daaddcef6cbd48956ccab94585d09, type: 3}
+  glassSlip:
+  - {fileID: 8300000, guid: bd6d367e044458843b8fc194eb5c4eec, type: 3}
+  - {fileID: 8300000, guid: 5fca1074d6018214aa87332e5dc5caf9, type: 3}
+  - {fileID: 8300000, guid: 0f2b5ab408500b44ebdbf1257d8d3043, type: 3}
+  - {fileID: 8300000, guid: 1dac7404ddb2799438d7322016c305c9, type: 3}
+  - {fileID: 8300000, guid: 398827f491dfcc441b4e797c038b7b40, type: 3}
+  - {fileID: 8300000, guid: 0653f2f5b557b2b4a953e94471cd0d8b, type: 3}
+  glassWipe:
+  - {fileID: 8300000, guid: 6d91503d0f375db438e03615b0a3fa57, type: 3}
+  - {fileID: 8300000, guid: 0d8eb47caced6f94797278f545523984, type: 3}
+  - {fileID: 8300000, guid: 0eeb0765dfec1654cac8ee8893cea8c0, type: 3}
+  - {fileID: 8300000, guid: b8b6d4b682a4b7f45b71549a37ca605d, type: 3}
+  - {fileID: 8300000, guid: e79a8c33794cbeb42b3b741b2573c468, type: 3}

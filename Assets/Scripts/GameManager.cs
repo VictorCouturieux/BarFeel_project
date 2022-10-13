@@ -14,10 +14,7 @@ public class GameManager : MonoBehaviour
     private Collider cleanCollider;
     
     private float timer = 0;
-    [SerializeField] private float timerDurationWaitClientInSec = 5;
-    [SerializeField] private float timerDurationGetGlassInSec = 5;
 
-    
     private Renderer testClientRenderer;
     private TestAnimClient testClientAnim;
     private int debugSec = 0;

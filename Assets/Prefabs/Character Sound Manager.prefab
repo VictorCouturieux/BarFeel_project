@@ -1,0 +1,147 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6407997165131990862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6407997165131990863}
+  - component: {fileID: 6407997165131990860}
+  m_Layer: 0
+  m_Name: Character Sound Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6407997165131990863
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6407997165131990862}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6407997165131990860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6407997165131990862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bac0d71dfda6c449ef528bc9ef8fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterSoundEvent: {fileID: 11400000, guid: 15eaec5a871b4d44db114d6ebf795ce5, type: 2}
+  characterSoundLists:
+  - characterType: 0
+    drinking:
+    - {fileID: 8300000, guid: b0a52b80992064b47ac6432f50792790, type: 3}
+    - {fileID: 8300000, guid: 82e376f1e919c864d9ad71542ba3537b, type: 3}
+    - {fileID: 8300000, guid: 0a771b4e2baa21f478e35ac2df366469, type: 3}
+    - {fileID: 8300000, guid: e260fc584f2e3af49bdd2247d871ab4f, type: 3}
+    - {fileID: 8300000, guid: 5922557278521ca42951cb17dd7b3778, type: 3}
+    - {fileID: 8300000, guid: afb93ac18e4f287469b4d6bdde9aa3b9, type: 3}
+    ordering:
+    - {fileID: 8300000, guid: 7c96f96c233548f40bba12de8d9a614c, type: 3}
+    - {fileID: 8300000, guid: f0439a50473e1d94b86c6a4db1009ecf, type: 3}
+    - {fileID: 8300000, guid: ca3dd2248a475ce4bb031009070e3090, type: 3}
+    - {fileID: 8300000, guid: dbcbba07a1322b34bb2b6178a7bef205, type: 3}
+    - {fileID: 8300000, guid: 65e42eb9c6cf53849a1f07245b670743, type: 3}
+    randomNoises:
+    - {fileID: 8300000, guid: 7368dbc428b81f841a26c3fa60ac51db, type: 3}
+    - {fileID: 8300000, guid: fcdb7d3c96d22864fb3d6aa52a7aa1fb, type: 3}
+    - {fileID: 8300000, guid: 70e75690d6fe78e4d82247b6903c87e0, type: 3}
+    - {fileID: 8300000, guid: 77f1f22ae8cc6a847964daf65b99a150, type: 3}
+    - {fileID: 8300000, guid: d4e8be698eb61d74c9bc5c76677dceab, type: 3}
+    - {fileID: 8300000, guid: 71f4c32f0989a444aaeb6264b34d98ca, type: 3}
+    satisfied:
+    - {fileID: 8300000, guid: 6279fefc92219174ebfec0e48ca9019a, type: 3}
+    - {fileID: 8300000, guid: 576bb99873568af4a95bb0283dc8ab11, type: 3}
+    - {fileID: 8300000, guid: af3fedd20b50c944b964adecba91f888, type: 3}
+    - {fileID: 8300000, guid: a299acf6fa293ad40a6fb4d2bcff7fc1, type: 3}
+    - {fileID: 8300000, guid: b546a751d56af6c4592f79233dfb01b1, type: 3}
+    - {fileID: 8300000, guid: 85ea09daf3dd417418ec04ab542bec88, type: 3}
+    - {fileID: 8300000, guid: ebbfc217a7303474cade3d8ab11e8a9e, type: 3}
+    - {fileID: 8300000, guid: a26f96d66234cf44498617eb8f944e0c, type: 3}
+    - {fileID: 8300000, guid: b522603759a29ff4b96dbd6c0eaab232, type: 3}
+    - {fileID: 8300000, guid: f4ef750b51b1b6043b1fe7c1f66bb560, type: 3}
+    sigh:
+    - {fileID: 8300000, guid: b1ee2ca7ca395e54ab01018fb5236261, type: 3}
+    - {fileID: 8300000, guid: 82bef19ed49b0064db42672de8ac1fac, type: 3}
+    - {fileID: 8300000, guid: 0ceea6929587a9b4ca8816f8aa91fe4c, type: 3}
+    - {fileID: 8300000, guid: 9719b5d0e66bcd1449abd5706b23b578, type: 3}
+  - characterType: 1
+    drinking:
+    - {fileID: 8300000, guid: 67a18c47c0221e34aa81ecf437819437, type: 3}
+    - {fileID: 8300000, guid: 88fbac2be29915246bc96f28008dc247, type: 3}
+    - {fileID: 8300000, guid: d64d31eaf59f7de4392e1e1af119927c, type: 3}
+    - {fileID: 8300000, guid: f5d91c20c8f6ce545bc09b4b39455b75, type: 3}
+    - {fileID: 8300000, guid: a1cdcae95bc3ccb4cae2ff20d488c318, type: 3}
+    ordering:
+    - {fileID: 8300000, guid: 48e354649383da24cb819a6308162681, type: 3}
+    - {fileID: 8300000, guid: ea30d91ca4be66e4a9547b6bfd23d4ac, type: 3}
+    - {fileID: 8300000, guid: da807c66739be9647a717bd1288644fb, type: 3}
+    - {fileID: 8300000, guid: b747d89df95716f4681ffd08192ff158, type: 3}
+    - {fileID: 8300000, guid: c97f5254861d3f74192c18af72391f4a, type: 3}
+    randomNoises:
+    - {fileID: 8300000, guid: a0ea1be9673decb46809fbe8d50b84c2, type: 3}
+    - {fileID: 8300000, guid: ebdac75b7f8b3e547bccd31be107aa69, type: 3}
+    - {fileID: 8300000, guid: 5cbbb0a4009073e469616ee84c405dc7, type: 3}
+    - {fileID: 8300000, guid: 6978a7a1531851f439452ea98736b0b0, type: 3}
+    - {fileID: 8300000, guid: d8735ebe5b2e4054dafffc4a5cac734a, type: 3}
+    - {fileID: 8300000, guid: 897685c9b62a4a54b8ae6d9b7c1b290f, type: 3}
+    satisfied:
+    - {fileID: 8300000, guid: bba288a09b2e0d344945a221b6cb77cb, type: 3}
+    - {fileID: 8300000, guid: fc428656088d6ad4989f4133548352b4, type: 3}
+    - {fileID: 8300000, guid: 212bd8cf2182c874088b864ab829b378, type: 3}
+    sigh:
+    - {fileID: 8300000, guid: 51baebf2a6934a24e9fd5b731db3a195, type: 3}
+    - {fileID: 8300000, guid: e9a89be61899f284a89fa2e1dfea74d5, type: 3}
+  - characterType: 2
+    drinking:
+    - {fileID: 8300000, guid: 6d9e33b9f6fe110499c0289ab019d28b, type: 3}
+    - {fileID: 8300000, guid: 15f579f5479c1934bbe7dafa25153b61, type: 3}
+    - {fileID: 8300000, guid: e4686a53791f72d408c7b40a85ad9e4e, type: 3}
+    - {fileID: 8300000, guid: 34855f1d95308c54d9ee14577cd56716, type: 3}
+    - {fileID: 8300000, guid: 3ada7fa67b1d741448c69a98823fbed4, type: 3}
+    ordering:
+    - {fileID: 8300000, guid: a88626e5fef00934fb04b78b255f2077, type: 3}
+    - {fileID: 8300000, guid: 00ce064221057684dab8f7141dad2dec, type: 3}
+    - {fileID: 8300000, guid: 0a529a022755a9145b82571785fa6100, type: 3}
+    - {fileID: 8300000, guid: 89aaed60193613444b499154bf83cf62, type: 3}
+    - {fileID: 8300000, guid: f8d1db871eac0e1498b658c425f03c98, type: 3}
+    - {fileID: 8300000, guid: 0517529bfc1f99a4599e3aa4d0a7e6da, type: 3}
+    - {fileID: 8300000, guid: 1d33dbd8d628c1745b0052bf3bb74c2f, type: 3}
+    randomNoises:
+    - {fileID: 8300000, guid: 0742f86cd3270dd44b48255522c6f03f, type: 3}
+    - {fileID: 8300000, guid: d8254973b62498c49abf4b990cdeace4, type: 3}
+    - {fileID: 8300000, guid: 67ea4aadd74b095469499d30fe3f796b, type: 3}
+    - {fileID: 8300000, guid: bb00af733ab775047a330992cb852e9c, type: 3}
+    - {fileID: 8300000, guid: 5a3ada16e9d33514886f404a510c7128, type: 3}
+    - {fileID: 8300000, guid: 6fbd10a2c94fa0a418413eb56cf08838, type: 3}
+    - {fileID: 8300000, guid: 526d7cbf347ba7d4eba2f9aff52229be, type: 3}
+    - {fileID: 8300000, guid: 1d174c2bd17e6044db17246640e0ee46, type: 3}
+    satisfied:
+    - {fileID: 8300000, guid: fbfb5c49e8f59614e8abd2507bd79c6d, type: 3}
+    - {fileID: 8300000, guid: 5f9a9d74446a44942b428f90e657594c, type: 3}
+    - {fileID: 8300000, guid: 504c8c269953b644280e0a64fd691243, type: 3}
+    - {fileID: 8300000, guid: e56dba07c5e71014996e775e68f3e9e8, type: 3}
+    - {fileID: 8300000, guid: 70a385750decae24eb8f40ae588addf6, type: 3}
+    sigh:
+    - {fileID: 8300000, guid: 8b8f2b32c1fedac4098416aa5f4f477e, type: 3}
+    - {fileID: 8300000, guid: 46f821226a0541d419f02768d03107d0, type: 3}
+    - {fileID: 8300000, guid: ce49e209417575447b7a5787cfb40795, type: 3}
+    - {fileID: 8300000, guid: d3899af0083623e45ba1ce33dc19b9e6, type: 3}

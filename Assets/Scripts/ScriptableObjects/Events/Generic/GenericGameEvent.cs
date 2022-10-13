@@ -68,3 +68,36 @@ public class GameEvent<T, U> : ScriptableObject
         }
     }
 }
+
+public class GameEvent<T, U, V> : ScriptableObject
+{
+    private List<Action<T, U, V>> callbacks;
+    public event Action<T, U, V> callEnd;
+    public bool enabled;
+
+    private void OnEnable() {
+        callbacks = new List<Action<T, U, V>>();
+    }
+
+    public void AddCallback(Action<T, U, V> callback) {
+        callbacks.Add(callback);
+    }
+    
+    public void RemoveCallback(Action<T, U, V> callback) {
+        callbacks.Remove(callback);
+    }
+
+    public void Call(T value1, U value2, V value3) {
+        if (enabled) {
+            // Call all callbacks
+            for (int i = callbacks.Count-1; i >= 0; i--) {
+                callbacks[i].Invoke(value1, value2, value3);
+            }
+
+            // Call end of event
+            if (callEnd != null) {
+                callEnd.Invoke(value1, value2, value3);
+            }
+        }
+    }
+}

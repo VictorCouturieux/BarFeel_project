@@ -17,6 +17,8 @@ public class ClientController : MonoBehaviour
 
 	private GameObject bubble;
 	
+	[SerializeField] private VoidGameEvent glassReceived;
+	
 	private float timer = 0;
 	[SerializeField] private float timeDrink = 10;
 	private bool startTimer;
@@ -92,6 +94,11 @@ public class ClientController : MonoBehaviour
 		_testClientAnimator.SetTrigger("ClientLeave");
 	}
 	
+	private void OnTriggerEnter(Collider collision) {
+		glassReceived.Call();
+		ClientGrabAndDrink();
+	}
+
 	private void ChangeClient() {
 		int r = currentIndexClient;
 		while (currentIndexClient == r) {
@@ -110,5 +117,5 @@ public class ClientController : MonoBehaviour
 		currentClient = clientList[i];
 		
 	}
-	
+
 }

@@ -220,5 +220,6 @@ MonoBehaviour:
   clientList: []
   material: {fileID: 2100000, guid: bcea48c20cdcd04419e4346e5678f84f, type: 2}
   _testClientAnimator: {fileID: 0}
-  _characterSound: {fileID: 0}
+  _characterSound: {fileID: 11400000, guid: 15eaec5a871b4d44db114d6ebf795ce5, type: 2}
+  glassReceived: {fileID: 11400000, guid: 3c6c05ce09eb1df4cbd8b0e33281dee6, type: 2}
   timeDrink: 4

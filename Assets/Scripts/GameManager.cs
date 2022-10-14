@@ -17,8 +17,6 @@ public class GameManager : MonoBehaviour
     
     
     private ClientController clientController;
-    [SerializeField] private Rigidbody glassRB;
-    private bool grabGlass;
 
     private void Awake() {
         if (instance == null) {
@@ -35,18 +33,6 @@ public class GameManager : MonoBehaviour
         cleanCollider = GameObject.FindWithTag("Clean").GetComponent<Collider>();
         
         clientController = GameObject.FindWithTag("Client").GetComponent<ClientController>();
-        glassRB = GameObject.FindWithTag("Glass").GetComponent<Rigidbody>();
-    }
-
-    private void Update() {
-        //temporary blockglass
-        if (glassRB.position.z >= 1f) {
-            glassRB.position = new Vector3(glassRB.position.x, glassRB.position.y, 1);
-            if (!grabGlass) {
-                clientController.ClientGrabAndDrink();
-                grabGlass = true;
-            }
-        }
     }
 
     public void NextStep() {
@@ -61,7 +47,7 @@ public class GameManager : MonoBehaviour
         Debug.Log(currentStep);
         BeAbleZoneCollider();
         if (currentStep == GameStep.WAIT_CIENT) {
-            grabGlass = false;
+            // grabGlass = false;
             clientController.ClientCome();
         }
     }

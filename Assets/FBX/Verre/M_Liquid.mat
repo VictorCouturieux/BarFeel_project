@@ -26,9 +26,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FillRatio: 1.01
-    - _MaxFillY: 1
-    - _MinFillY: 0
+    - _FillRatio: 1.0099999
+    - _MaxFillY: 0.9
+    - _MinFillY: 0.1
     m_Colors:
-    - _AlbedoColor: {r: 1, g: 1, b: 1, a: 0.7019608}
+    - _AlbedoColor: {r: 1, g: 1, b: 1, a: 0.70980394}
   m_BuildTextureStacks: []

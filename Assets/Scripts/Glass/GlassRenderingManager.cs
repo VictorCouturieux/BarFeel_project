@@ -18,12 +18,21 @@ public class GlassRenderingManager : MonoBehaviour
     private float currentFillRatio;
     private float fillDampVelocity;
 
+    [Header("Visibility")]
+    [SerializeField] private Material[] materials;
+    private float[] initialMaterialsAlpha;
+
     [HideInInspector] public bool FollowTargetStrictly;
 
     private void Awake() {
         FollowTargetStrictly = false;
         currentFillRatio = 0f;
         targetFillRatio = 0f;
+
+        initialMaterialsAlpha = new float[materials.Length];
+        for (int i = 0; i < materials.Length; i++) {
+            initialMaterialsAlpha[i] = materials[i].GetColor("_AlbedoColor").a;
+        } 
     }
 
     private void Update() {
@@ -72,5 +81,19 @@ public class GlassRenderingManager : MonoBehaviour
         targetFillRatio = fillLerpedRatio;
     }
 
-    // TODO : add fill functions
+    public void SetVisible(bool visible) {
+        if (visible) {
+            for (int i = 0; i < materials.Length; i++) {
+                Color color = materials[i].GetColor("_AlbedoColor");
+                color.a = initialMaterialsAlpha[i];
+                materials[i].SetColor("_AlbedoColor", color);
+            } 
+        } else {
+            for (int i = 0; i < materials.Length; i++) {
+                Color color = materials[i].GetColor("_AlbedoColor");
+                color.a = 0;
+                materials[i].SetColor("_AlbedoColor", color);
+            } 
+        }
+    }
 }

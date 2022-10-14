@@ -2436,10 +2436,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Throw Zone
       objectReference: {fileID: 0}
-    - target: {fileID: 2639284171391253984, guid: 0aa288cf464ca024e979829319ca8cf9, type: 3}
-      propertyPath: m_TagString
-      value: Throw
-      objectReference: {fileID: 0}
     - target: {fileID: 2639284171391253987, guid: 0aa288cf464ca024e979829319ca8cf9, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2484,17 +2480,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5780944851702769092, guid: 0aa288cf464ca024e979829319ca8cf9, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 4.666854
-      objectReference: {fileID: 0}
-    - target: {fileID: 5780944851702769092, guid: 0aa288cf464ca024e979829319ca8cf9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.5806
-      objectReference: {fileID: 0}
-    - target: {fileID: 6850038486255506496, guid: 0aa288cf464ca024e979829319ca8cf9, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 4ce8e3432a5da9447948c0c28088b037, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0aa288cf464ca024e979829319ca8cf9, type: 3}

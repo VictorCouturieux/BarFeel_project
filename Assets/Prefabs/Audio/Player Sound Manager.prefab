@@ -73,7 +73,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0f2b5ab408500b44ebdbf1257d8d3043, type: 3}
   - {fileID: 8300000, guid: 1dac7404ddb2799438d7322016c305c9, type: 3}
   - {fileID: 8300000, guid: 398827f491dfcc441b4e797c038b7b40, type: 3}
-  - {fileID: 8300000, guid: 0653f2f5b557b2b4a953e94471cd0d8b, type: 3}
   glassWipe:
   - {fileID: 8300000, guid: 6d91503d0f375db438e03615b0a3fa57, type: 3}
   - {fileID: 8300000, guid: 0d8eb47caced6f94797278f545523984, type: 3}

@@ -105,6 +105,10 @@ MonoBehaviour:
   liquidFillMaterial: {fileID: 2100000, guid: 1d8ea62492001004b9f5ae37411c3dcd, type: 2}
   fillSmoothingTime: 0.0625
   fillMaxSpeed: 1.25
+  materials:
+  - {fileID: 2100000, guid: 446a4b1f697c77845896c2ef30a44326, type: 2}
+  - {fileID: 2100000, guid: 470d0575b3b4bfc41a5f1b35a7a5888a, type: 2}
+  - {fileID: 2100000, guid: 1d8ea62492001004b9f5ae37411c3dcd, type: 2}
   FollowTargetStrictly: 0
 --- !u!1 &4120223337474065948
 GameObject:
@@ -206,8 +210,8 @@ MonoBehaviour:
   throwForceMultiplier: 200
   throwMinMagnitude: 1.25
   throwMaxAngleDiff: 15
-  fillStepCount: 5
-  cleanStepCount: 5
+  fillStepCount: 8
+  cleanStepCount: 6
   showDebug: 1
   useMouseMovement: 1
 --- !u!1 &4120223337642186035

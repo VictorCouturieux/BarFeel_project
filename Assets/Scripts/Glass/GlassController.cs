@@ -62,11 +62,17 @@ public class GlassController : MonoBehaviour
 
     private void OnGlassReceived() {
         rb.velocity = Vector3.zero;
+        glassRendering.SetVisible(false);
+        transform.position = GetInBoundsPosition(new Vector2(0.5f, 0.5f));
+        glassRendering.FollowTargetStrictly = true;
+        glassRendering.SetLiquidFillRatio(0f);
     }
 
     private void OnNewGameStep(GameStep step) {
         switch (step) {
             case GameStep.CLEAN:
+                glassRendering.SetVisible(true);
+                glassRendering.FollowTargetStrictly = false;
                 currentFillStep = 0;
                 glassRendering.SetLiquidFillRatio(0f);
                 currentCleanStep = 0;

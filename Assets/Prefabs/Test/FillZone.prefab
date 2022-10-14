@@ -143,5 +143,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _positionConstraint: {fileID: 0}
-  timerDurationInSec: 0.5
+  timerDurationInSec: 1.5
   stepRatioEvent: {fileID: 11400000, guid: 4902c1647d30255459813164d0f4e40e, type: 2}

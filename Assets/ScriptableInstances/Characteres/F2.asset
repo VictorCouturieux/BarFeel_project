@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3bdecd9ac4f0464fb3a5c7a4e828f26, type: 3}
   m_Name: F2
   m_EditorClassIdentifier: 
-  ClientBase: {fileID: 2800000, guid: 66819a7aec4fda34ebb7eebbf82ba8b1, type: 3}
-  ClientDrink: {fileID: 2800000, guid: 5a44b486adbbfc04c9d2c9b65395c470, type: 3}
-  ClientGrab: {fileID: 2800000, guid: 1d4e1d42cc21a1f43bb2d3565db9a73e, type: 3}
-  ClientSign: {fileID: 2800000, guid: f187579c0cf5a0d439f2c24c84d36d55, type: 3}
+  ClientBase: {fileID: 2800000, guid: 4f5d1c9cc628b6a4191541f45e275cca, type: 3}
+  ClientDrink: {fileID: 2800000, guid: 71ec107afd106b54db29dc346414a79e, type: 3}
+  ClientGrab: {fileID: 2800000, guid: ea8adada967a2754d87c7b788aa7ecb6, type: 3}
+  ClientSign: {fileID: 2800000, guid: c4f4957fee7ae414eb01fa912f29b0a9, type: 3}

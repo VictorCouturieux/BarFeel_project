@@ -21,8 +21,7 @@ public class TimerZone : MonoBehaviour
         if (collision.gameObject.CompareTag("Glass")) {
             timer += Time.fixedDeltaTime;
             if (timer >= timerDurationInSec) {
-                Debug.Log("CALL STEP FILL");
-                //Debug.Log("Timer Down");
+                // Debug.Log("CALL STEP FILL");
                 //todo : increase step completion for glass
                 stepRatioEvent.Call();
                 timer = 0;

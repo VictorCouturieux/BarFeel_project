@@ -7,6 +7,7 @@ TagManager:
   - Glass
   - Fill
   - Clean
+  - Client
   layers:
   - Default
   - TransparentFX

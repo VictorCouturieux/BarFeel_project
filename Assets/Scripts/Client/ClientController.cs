@@ -5,7 +5,6 @@ using Random = UnityEngine.Random;
 
 public class ClientController : MonoBehaviour
 {
-	[SerializeField] private CharacterType type;
 	[SerializeField] private ClientAnim[] clientList;
 	private ClientAnim currentClient;
 	private int currentIndexClient = -1;
@@ -48,6 +47,8 @@ public class ClientController : MonoBehaviour
 	public void ClientCome() {
 		ChangeClient();
 		material.SetTexture("_MainTex", currentClient.ClientBase);
+		Debug.Log("ENTER");
+		_characterSound.Call(currentClient.type, CharacterSoundType.ENTER, transform.position);
 		_testClientAnimator.SetTrigger("ClientCome");
 	}
 
@@ -63,6 +64,8 @@ public class ClientController : MonoBehaviour
 	private IEnumerator LoopAskForGlass() {
 		while (true) {
 			material.SetTexture("_MainTex", currentClient.ClientSign);
+			Debug.Log("SIGH");
+			_characterSound.Call(currentClient.type, CharacterSoundType.SIGH, transform.position);
 			bubble.SetActive(true);
 			yield return new WaitForSeconds(Random.Range(3f, 5f));
 			material.SetTexture("_MainTex", currentClient.ClientBase);
@@ -77,6 +80,8 @@ public class ClientController : MonoBehaviour
 			StopCoroutine(currentCoroutine);
 		}
 		currentCoroutine = LoopGrabAndDrink();
+		Debug.Log("SATISFIED");
+		_characterSound.Call(currentClient.type, CharacterSoundType.SATISFIED, transform.position);
 		StartCoroutine(currentCoroutine);
 		startTimer = true;
 	}
@@ -86,12 +91,19 @@ public class ClientController : MonoBehaviour
 			material.SetTexture("_MainTex", currentClient.ClientGrab);
 			yield return new WaitForSeconds(Random.Range(1f, 6f));
 			material.SetTexture("_MainTex", currentClient.ClientDrink);
+			Debug.Log("DRINKING");
+			_characterSound.Call(currentClient.type, CharacterSoundType.DRINKING, transform.position);
 			yield return new WaitForSeconds(Random.Range(1f, 3f));
 		}
 	}
 	
 	public void ClientLeave() {
 		_testClientAnimator.SetTrigger("ClientLeave");
+	}
+
+	public void ClientExit() {
+		Debug.Log("EXIT");
+		_characterSound.Call(currentClient.type, CharacterSoundType.EXIT, transform.position);
 	}
 	
 	private void OnTriggerEnter(Collider collision) {

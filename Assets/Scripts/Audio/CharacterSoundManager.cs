@@ -12,7 +12,7 @@ public class CharacterSoundManager : MonoBehaviour
     private void OnCharacterSound(CharacterType charType, CharacterSoundType soundType, Vector3 position) {
         for (int i = 0; i < characterSoundLists.Length; i++) {
             if (characterSoundLists[i].characterType == charType) {
-                AudioSource.PlayClipAtPoint(characterSoundLists[i].GetRandomClip(soundType), position);
+                AudioSource.PlayClipAtPoint(characterSoundLists[i].GetRandomClip(soundType), transform.position);
                 break;
             }
         }

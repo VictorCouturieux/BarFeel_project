@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3bdecd9ac4f0464fb3a5c7a4e828f26, type: 3}
   m_Name: F2
   m_EditorClassIdentifier: 
+  type: 2
   ClientBase: {fileID: 2800000, guid: 4f5d1c9cc628b6a4191541f45e275cca, type: 3}
   ClientDrink: {fileID: 2800000, guid: 71ec107afd106b54db29dc346414a79e, type: 3}
   ClientGrab: {fileID: 2800000, guid: ea8adada967a2754d87c7b788aa7ecb6, type: 3}

@@ -107,7 +107,6 @@ public class ClientController : MonoBehaviour
 		}
 
 		int i = r * 3 + t;
-		Debug.Log(r + " * 3 + " + t + " = " + i);
 		currentClient = clientList[i];
 		
 	}

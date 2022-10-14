@@ -68,3 +68,4 @@ crashlytics-build.properties
 default-2021.dwlt
 *.wav
 *.wav.meta
+Build*/

@@ -245,6 +245,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8711142497487006076, guid: a0b522d6777b7474d8816492c4bdb00c, type: 3}
+      propertyPath: timerDurationInSec
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711142497487006076, guid: a0b522d6777b7474d8816492c4bdb00c, type: 3}
       propertyPath: _positionConstraint
       value: 
       objectReference: {fileID: 988826447}
@@ -342,7 +346,7 @@ Camera:
   m_GameObject: {fileID: 127847954}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 4
+  m_ClearFlags: 3
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 1
@@ -1653,6 +1657,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 614851727}
     m_Modifications:
+    - target: {fileID: 2137126079520182017, guid: 45c3a60ecc6981c4ba39c872b978da8e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137126079520182079, guid: 45c3a60ecc6981c4ba39c872b978da8e, type: 3}
+      propertyPath: m_Volume
+      value: 0.075
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137126079825511763, guid: 45c3a60ecc6981c4ba39c872b978da8e, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137126080542451968, guid: 45c3a60ecc6981c4ba39c872b978da8e, type: 3}
+      propertyPath: m_Volume
+      value: 0.175
+      objectReference: {fileID: 0}
     - target: {fileID: 2137126080868247440, guid: 45c3a60ecc6981c4ba39c872b978da8e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2342,26 +2362,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 919132148502566422, guid: ab34da2e032b37948a8d11e4b844839d, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132148866398396, guid: ab34da2e032b37948a8d11e4b844839d, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149420071492, guid: ab34da2e032b37948a8d11e4b844839d, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4120223336800700762, guid: ab34da2e032b37948a8d11e4b844839d, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4120223336929463344, guid: ab34da2e032b37948a8d11e4b844839d, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4120223337474065941, guid: ab34da2e032b37948a8d11e4b844839d, type: 3}
       propertyPath: textile
       value: 
@@ -2370,9 +2370,9 @@ PrefabInstance:
       propertyPath: blobMovement
       value: 
       objectReference: {fileID: 1690865368}
-    - target: {fileID: 4120223337474065948, guid: ab34da2e032b37948a8d11e4b844839d, type: 3}
-      propertyPath: m_Layer
-      value: 3
+    - target: {fileID: 4120223337474065941, guid: ab34da2e032b37948a8d11e4b844839d, type: 3}
+      propertyPath: useMouseMovement
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4120223337642186034, guid: ab34da2e032b37948a8d11e4b844839d, type: 3}
       propertyPath: m_RootOrder
@@ -2421,10 +2421,6 @@ PrefabInstance:
     - target: {fileID: 4120223337642186035, guid: ab34da2e032b37948a8d11e4b844839d, type: 3}
       propertyPath: m_Name
       value: Glass
-      objectReference: {fileID: 0}
-    - target: {fileID: 4120223337642186035, guid: ab34da2e032b37948a8d11e4b844839d, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab34da2e032b37948a8d11e4b844839d, type: 3}
@@ -3061,6 +3057,10 @@ PrefabInstance:
     - target: {fileID: 1037244472797234652, guid: df9ab1dd55932094983a78119ea4f342, type: 3}
       propertyPath: m_Name
       value: CleanZone
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037244472797234655, guid: df9ab1dd55932094983a78119ea4f342, type: 3}
+      propertyPath: timerDurationInSec
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 1037244472797234655, guid: df9ab1dd55932094983a78119ea4f342, type: 3}
       propertyPath: _positionConstraint

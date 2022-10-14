@@ -64,6 +64,7 @@ public class GlassController : MonoBehaviour
         rb.velocity = Vector3.zero;
         glassRendering.SetVisible(false);
         transform.position = GetInBoundsPosition(new Vector2(0.5f, 0.5f));
+        playerSound.Call(PlayerSoundType.GLASS_GRAB, transform.position);
         glassRendering.FollowTargetStrictly = true;
         glassRendering.SetLiquidFillRatio(0f);
     }

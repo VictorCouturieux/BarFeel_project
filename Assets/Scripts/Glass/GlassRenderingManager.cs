@@ -96,4 +96,8 @@ public class GlassRenderingManager : MonoBehaviour
             } 
         }
     }
+
+    private void OnDisable() {
+        SetVisible(true);
+    }
 }

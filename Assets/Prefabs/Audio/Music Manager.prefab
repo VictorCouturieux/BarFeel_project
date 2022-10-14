@@ -48,8 +48,8 @@ MonoBehaviour:
   musicSource: {fileID: 5068910554523514276}
   songs:
   - {fileID: 8300000, guid: f170c807c3562004eaf6003abfff629f, type: 3}
-  - {fileID: 8300000, guid: 532c40daf9e247340955907a7a884c7d, type: 3}
-  - {fileID: 8300000, guid: 37682163271bb1549a63a734a6e68792, type: 3}
+  - {fileID: 8300000, guid: 595c76f2e072c5c41b672da2c20c1c4a, type: 3}
+  - {fileID: 8300000, guid: 1b6895c08a8a56e46a9fc9f8c497d1a1, type: 3}
   silenceBetweenSongs: 15
   musicStartEvent: {fileID: 11400000, guid: 18cbbd8b84181ad41a276eba0ed13eac, type: 2}
   musicChangeEvent: {fileID: 11400000, guid: 6fc5e381a318db54395d048588ada397, type: 2}

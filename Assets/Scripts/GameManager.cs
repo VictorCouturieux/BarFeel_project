@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -14,11 +15,10 @@ public class GameManager : MonoBehaviour
     private Collider fillCollider;
     private Collider cleanCollider;
     
-    private float timer = 0;
-
-    private Renderer testClientRenderer;
-    private TestAnimClient testClientAnim;
-    private int debugSec = 0;
+    
+    private ClientController clientController;
+    [SerializeField] private Rigidbody glassRB;
+    private bool grabGlass;
 
     private void Awake() {
         if (instance == null) {
@@ -33,11 +33,20 @@ public class GameManager : MonoBehaviour
     private void Start() {
         fillCollider = GameObject.FindWithTag("Fill").GetComponent<Collider>();
         cleanCollider = GameObject.FindWithTag("Clean").GetComponent<Collider>();
+        
+        clientController = GameObject.FindWithTag("Client").GetComponent<ClientController>();
+        glassRB = GameObject.FindWithTag("Glass").GetComponent<Rigidbody>();
+    }
 
-        testClientRenderer = GameObject.Find("TestClient").GetComponent<Renderer>();
-        testClientAnim = GameObject.Find("TestClient").GetComponent<TestAnimClient>();
-
-        testClientAnim.ClientUp();
+    private void Update() {
+        //temporary blockglass
+        if (glassRB.position.z >= 1f) {
+            glassRB.position = new Vector3(glassRB.position.x, glassRB.position.y, 1);
+            if (!grabGlass) {
+                clientController.ClientGrabAndDrink();
+                grabGlass = true;
+            }
+        }
     }
 
     public void NextStep() {
@@ -52,9 +61,8 @@ public class GameManager : MonoBehaviour
         Debug.Log(currentStep);
         BeAbleZoneCollider();
         if (currentStep == GameStep.WAIT_CIENT) {
-            testClientAnim.ClientUp();
-        } else if (currentStep == GameStep.GET) {
-            testClientAnim.ClientDown();
+            grabGlass = false;
+            clientController.ClientCome();
         }
     }
 

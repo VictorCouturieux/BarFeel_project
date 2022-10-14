@@ -8,10 +8,7 @@ Shader "Unlit/Glass"
 
     SubShader
     {
-        Tags { 
-            "RenderType"="Transparent"
-            "Queue"="Transparent"
-        }
+        Tags { "RenderType"="Transparent" }
         Blend SrcAlpha OneMinusSrcAlpha
         Cull Front
 

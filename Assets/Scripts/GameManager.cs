@@ -12,9 +12,9 @@ public class GameManager : MonoBehaviour
         get { return currentStep; }
     }
 
-    private Collider fillCollider;
-    private Collider cleanCollider;
-    
+    private GameObject fillArea;
+    private GameObject cleanArea;
+    private GameObject throwArea;
     
     private ClientController clientController;
 
@@ -29,10 +29,12 @@ public class GameManager : MonoBehaviour
     }
 
     private void Start() {
-        fillCollider = GameObject.FindWithTag("Fill").GetComponent<Collider>();
-        cleanCollider = GameObject.FindWithTag("Clean").GetComponent<Collider>();
+        fillArea = GameObject.FindWithTag("Fill");
+        cleanArea = GameObject.FindWithTag("Clean");
+        throwArea = GameObject.FindWithTag("Throw");
         
         clientController = GameObject.FindWithTag("Client").GetComponent<ClientController>();
+        UpdateActiveAreas();
     }
 
     public void NextStep() {
@@ -45,26 +47,29 @@ public class GameManager : MonoBehaviour
         newGameStepEvent.Call(currentStep);
 
         Debug.Log(currentStep);
-        BeAbleZoneCollider();
+        UpdateActiveAreas();
         if (currentStep == GameStep.WAIT_CIENT) {
             // grabGlass = false;
             clientController.ClientCome();
         }
     }
 
-    private void BeAbleZoneCollider() {
+    private void UpdateActiveAreas() {
         if (currentStep == GameStep.FILL) {
-            fillCollider.enabled = true;
-            cleanCollider.enabled = false;
+            SetActiveAreas(fill: true);
+        } else if (currentStep == GameStep.CLEAN) {
+            SetActiveAreas(clean: true);
+        } else if (currentStep == GameStep.SET) {
+            SetActiveAreas(_throw: true);
+        } else {
+            SetActiveAreas();
         }
-        else if (currentStep == GameStep.CLEAN) {
-            fillCollider.enabled = false;
-            cleanCollider.enabled = true;
-        }
-        else {
-            fillCollider.enabled = false;
-            cleanCollider.enabled = false;
-        }
+    }
+
+    private void SetActiveAreas(bool fill=false, bool clean=false, bool _throw=false) {
+        fillArea.SetActive(fill);
+        cleanArea.SetActive(clean);
+        throwArea.SetActive(_throw);
     }
 
 }

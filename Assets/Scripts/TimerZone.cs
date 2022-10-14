@@ -10,12 +10,15 @@ public class TimerZone : MonoBehaviour
     [SerializeField] private VoidGameEvent stepRatioEvent;
 
     private float timer = 0;
-    
+
     void Start() {
         _collider = GetComponent<Collider>();
         _collider.isTrigger = true;
     }
 
+    private void OnEnable() {
+        timer = 0;
+    }
 
     private void OnTriggerStay(Collider collision) {
         if (collision.gameObject.CompareTag("Glass")) {
@@ -39,5 +42,9 @@ public class TimerZone : MonoBehaviour
             _positionConstraint.constraintActive = true;
             timer = 0;
         }
+    }
+
+    private void OnDisable() {
+        timer = 0;
     }
 }

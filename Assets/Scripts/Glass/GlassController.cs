@@ -16,6 +16,7 @@ public class GlassController : MonoBehaviour
     [SerializeField] private VoidGameEvent stepRatioEvent;
     [SerializeField] private GameStepGameEvent newGameStepEvent;
     [SerializeField] private PlayerSoundGameEvent playerSound;
+    [SerializeField] private VoidGameEvent glassReceivedEvent;
 
     [Header("Throw")]
     [SerializeField] private Vector3 throwDirection; // TODO: probably replace with target
@@ -51,11 +52,16 @@ public class GlassController : MonoBehaviour
     private void OnEnable() {
         stepRatioEvent.AddCallback(OnStepRatio);
         newGameStepEvent.AddCallback(OnNewGameStep);
+        glassReceivedEvent.AddCallback(OnGlassReceived);
     }
 
     private void Update() {
         UpdateThrow();
         UpdatePosition();
+    }
+
+    private void OnGlassReceived() {
+        rb.velocity = Vector3.zero;
     }
 
     private void OnNewGameStep(GameStep step) {
@@ -115,6 +121,7 @@ public class GlassController : MonoBehaviour
     private void Throw() {
         rb.AddForce(throwDirection * throwForceMultiplier);
         playerSound.Call(PlayerSoundType.GLASS_LAUNCH, transform.position);
+        playerSound.Call(PlayerSoundType.GLASS_SLIP, transform.position);
         GameManager.instance.NextStep();
         glassRendering.FollowTargetStrictly = true;
     }
@@ -171,6 +178,7 @@ public class GlassController : MonoBehaviour
     private void OnDisable() {
         stepRatioEvent.RemoveCallback(OnStepRatio);
         newGameStepEvent.RemoveCallback(OnNewGameStep);
+        glassReceivedEvent.RemoveCallback(OnGlassReceived);
 
     }
 }

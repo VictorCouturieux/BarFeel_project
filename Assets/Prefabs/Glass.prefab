@@ -201,6 +201,7 @@ MonoBehaviour:
   stepRatioEvent: {fileID: 11400000, guid: 4902c1647d30255459813164d0f4e40e, type: 2}
   newGameStepEvent: {fileID: 11400000, guid: 40bcc7361c70b9d4a982cce59db13d42, type: 2}
   playerSound: {fileID: 11400000, guid: 572c4ca0387d20e469939672cbfa100c, type: 2}
+  glassReceivedEvent: {fileID: 11400000, guid: 3c6c05ce09eb1df4cbd8b0e33281dee6, type: 2}
   throwDirection: {x: 0, y: 0, z: 1}
   throwForceMultiplier: 200
   throwMinMagnitude: 1.25
@@ -208,7 +209,7 @@ MonoBehaviour:
   fillStepCount: 5
   cleanStepCount: 5
   showDebug: 1
-  useMouseMovement: 0
+  useMouseMovement: 1
 --- !u!1 &4120223337642186035
 GameObject:
   m_ObjectHideFlags: 0

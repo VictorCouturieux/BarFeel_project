@@ -14,7 +14,8 @@ public class GlassController : MonoBehaviour
 
     [Header("Events")]
     [SerializeField] private VoidGameEvent stepRatioEvent;
-
+    [SerializeField] private GameStepGameEvent newGameStepEvent;
+    [SerializeField] private PlayerSoundGameEvent playerSound;
 
     [Header("Throw")]
     [SerializeField] private Vector3 throwDirection; // TODO: probably replace with target
@@ -23,12 +24,18 @@ public class GlassController : MonoBehaviour
     [SerializeField] private float throwMaxAngleDiff = 15f;
     public bool IsRaised { private set; get; }
 
+    [Header("Steps Progress")]
+    [SerializeField] private int fillStepCount;
+    [SerializeField] private int cleanStepCount;
+    private int currentFillStep;
+    private int currentCleanStep;
+
+
     [Header("Debug")]
     [SerializeField] private bool showDebug = false;
     [SerializeField] private bool useMouseMovement = false;
 
     private Rigidbody rb;
-    private float nextFill;
 	
     private void Awake() {
 	    rb = GetComponent<Rigidbody>();
@@ -36,12 +43,14 @@ public class GlassController : MonoBehaviour
 
     private void Start() {
         IsRaised = false;
-        nextFill = 0f;
+        currentFillStep = 0;
+        currentCleanStep = 0;
         glassRendering.SetLiquidFillRatio(0f);
     }
 
     private void OnEnable() {
-        stepRatioEvent.AddCallback(OnStepRatioEvent);
+        stepRatioEvent.AddCallback(OnStepRatio);
+        newGameStepEvent.AddCallback(OnNewGameStep);
     }
 
     private void Update() {
@@ -49,32 +58,46 @@ public class GlassController : MonoBehaviour
         UpdatePosition();
     }
 
-    private void OnStepRatioEvent() {
+    private void OnNewGameStep(GameStep step) {
+        switch (step) {
+            case GameStep.CLEAN:
+                currentFillStep = 0;
+                glassRendering.SetLiquidFillRatio(0f);
+                currentCleanStep = 0;
+                // TODO : set clean ratio to 0
+                break;
+        }
+    }
+
+    private void OnStepRatio() {
         if (IsRaised) {
             return;
         }
         
-        if (GameManager.instance.CurrentStep == GameManager.GameStep.FILL) {
-            glassRendering.SetLiquidFillRatio(nextFill);
-            UpdateStepFill();
-        } else if (GameManager.instance.CurrentStep == GameManager.GameStep.CLEAN) {
+        if (GameManager.instance.CurrentStep == GameStep.FILL) {
+            currentFillStep++;
+            glassRendering.SetLiquidFillRatio(((float)currentFillStep / (float)fillStepCount) + 0.001f);
+            playerSound.Call(PlayerSoundType.GLASS_FILL, transform.position);
+            if (currentFillStep >= fillStepCount) {
+                EndStep();
+            }
+        } else if (GameManager.instance.CurrentStep == GameStep.CLEAN) {
+            currentCleanStep++;
             // TODO : increase clean ratio (somehow)
-            UpdateStepFill();
+            playerSound.Call(PlayerSoundType.GLASS_WIPE, transform.position);
+            if (currentCleanStep >= cleanStepCount) {
+                EndStep();
+            }
         }
     }
 
-    private void UpdateStepFill() {
-        if (nextFill >= 1.0f) {
-            GameManager.instance.NextStep();
-            positionConstraint.constraintActive = true;
-            nextFill = 0f;
-        } else {
-            nextFill = Mathf.Min(1.0f, nextFill + 0.1f);
-        }
+    private void EndStep() {
+        GameManager.instance.NextStep();
+        positionConstraint.constraintActive = true;
     }
 
     private void UpdateThrow() {
-        if (GameManager.instance.CurrentStep == GameManager.GameStep.SET) {
+        if (GameManager.instance.CurrentStep == GameStep.SET && !IsRaised) {
             if (useMouseMovement) {
                 if (Input.GetMouseButton(0)) {
                     Throw();
@@ -91,12 +114,13 @@ public class GlassController : MonoBehaviour
 
     private void Throw() {
         rb.AddForce(throwDirection * throwForceMultiplier);
+        playerSound.Call(PlayerSoundType.GLASS_LAUNCH, transform.position);
         GameManager.instance.NextStep();
         glassRendering.FollowTargetStrictly = true;
     }
 
     private void UpdatePosition() {
-        if (GameManager.instance.CurrentStep != GameManager.GameStep.GET) {
+        if (GameManager.instance.CurrentStep != GameStep.GET) {
             glassRendering.FollowTargetStrictly = false;
             rb.velocity = Vector3.zero;
 
@@ -145,6 +169,8 @@ public class GlassController : MonoBehaviour
     }
 
     private void OnDisable() {
-        stepRatioEvent.RemoveCallback(OnStepRatioEvent);
+        stepRatioEvent.RemoveCallback(OnStepRatio);
+        newGameStepEvent.RemoveCallback(OnNewGameStep);
+
     }
 }

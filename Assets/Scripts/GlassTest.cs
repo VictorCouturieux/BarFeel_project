@@ -18,7 +18,7 @@ public class GlassTest : MonoBehaviour
 	
 	void Update() {
 		
-		if (GameManager.instance.CurrentStep != GameManager.GameStep.GET) {
+		if (GameManager.instance.CurrentStep != GameStep.GET) {
 			float x = initX;
 			if (Input.mousePosition.x > 0 && Input.mousePosition.x < Screen.width) {
 				x = Input.mousePosition.x / Screen.width *4 -10.41f;
@@ -31,7 +31,7 @@ public class GlassTest : MonoBehaviour
 			transform.position = new Vector3(x, transform.position.y, z);
 		}
 	    
-		if (Input.GetMouseButtonDown(0) && GameManager.instance.CurrentStep == GameManager.GameStep.SET) {
+		if (Input.GetMouseButtonDown(0) && GameManager.instance.CurrentStep == GameStep.SET) {
 			rb.AddForce(Vector3.forward*speed);
 			GameManager.instance.NextStep();
 		}

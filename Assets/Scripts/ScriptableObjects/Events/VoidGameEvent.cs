@@ -8,7 +8,7 @@ public class VoidGameEvent : ScriptableObject
 {
     private List<Action> callbacks;
     public event Action callEnd;
-    public bool enabled;
+    public bool enabled = true;
 
     private void OnEnable() {
         callbacks = new List<Action>();

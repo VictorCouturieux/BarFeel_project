@@ -17,7 +17,7 @@ public class PlayerSoundManager : MonoBehaviour
     private void OnPlayerSound(PlayerSoundType type, Vector3 position) {
         AudioClip clip = GetRandomClipForType(type);
         if (clip != null) {
-            AudioSource.PlayClipAtPoint(clip, position);
+            AudioSource.PlayClipAtPoint(clip, position, 2.0f);
         }
     }
 

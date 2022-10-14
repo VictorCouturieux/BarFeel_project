@@ -91,7 +91,7 @@ MonoBehaviour:
   normalizeCoords: 1
   maxInactiveTime: 0.3
   inactiveUpdateDelay: 0.05
-  showDebug: 0
+  showDebug: 1
   showOnlyAverage: 0
   showBlobSize: 0
   debugColors:

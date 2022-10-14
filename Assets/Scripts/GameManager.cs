@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance = null;
+    [HideInInspector] public static GameManager instance = null;
+    [SerializeField] private GameStepGameEvent newGameStepEvent;
 
     private GameStep currentStep = GameStep.WAIT_CIENT;
     public GameStep CurrentStep {
@@ -18,15 +19,6 @@ public class GameManager : MonoBehaviour
     private Renderer testClientRenderer;
     private TestAnimClient testClientAnim;
     private int debugSec = 0;
-
-    public enum GameStep
-    {
-        WAIT_CIENT,
-        FILL,
-        SET,
-        GET,
-        CLEAN
-    }
 
     private void Awake() {
         if (instance == null) {
@@ -55,6 +47,8 @@ public class GameManager : MonoBehaviour
         else {
             currentStep++;
         }
+        newGameStepEvent.Call(currentStep);
+
         Debug.Log(currentStep);
         BeAbleZoneCollider();
         if (currentStep == GameStep.WAIT_CIENT) {
@@ -79,4 +73,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+}
+
+[System.Serializable]
+public enum GameStep
+{
+    WAIT_CIENT,
+    FILL,
+    SET,
+    GET,
+    CLEAN
 }

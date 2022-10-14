@@ -7,7 +7,7 @@ public class GameEvent<T> : ScriptableObject
 {
     private List<Action<T>> callbacks;
     public event Action<T> callEnd;
-    public bool enabled;
+    public bool enabled = true;
 
     private void OnEnable() {
         callbacks = new List<Action<T>>();
@@ -40,7 +40,7 @@ public class GameEvent<T, U> : ScriptableObject
 {
     private List<Action<T, U>> callbacks;
     public event Action<T, U> callEnd;
-    public bool enabled;
+    public bool enabled = true;
 
     private void OnEnable() {
         callbacks = new List<Action<T, U>>();
@@ -73,7 +73,7 @@ public class GameEvent<T, U, V> : ScriptableObject
 {
     private List<Action<T, U, V>> callbacks;
     public event Action<T, U, V> callEnd;
-    public bool enabled;
+    public bool enabled = true;
 
     private void OnEnable() {
         callbacks = new List<Action<T, U, V>>();

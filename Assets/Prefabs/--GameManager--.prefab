@@ -44,5 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae5002649eb26b4fa491e73cb275118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerDurationWaitClientInSec: 5
-  timerDurationGetGlassInSec: 5
+  newGameStepEvent: {fileID: 11400000, guid: 40bcc7361c70b9d4a982cce59db13d42, type: 2}

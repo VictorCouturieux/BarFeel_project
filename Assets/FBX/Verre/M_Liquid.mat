@@ -26,7 +26,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FillRatio: 1.0099999
+    - _FillRatio: 0
     - _MaxFillY: 0.9
     - _MinFillY: 0.1
     m_Colors:

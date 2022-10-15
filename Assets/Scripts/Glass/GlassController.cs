@@ -117,7 +117,8 @@ public class GlassController : MonoBehaviour
                 }
             } else {
                 Vector2 blobAverageVelocity = blobMovement.GetAverageVelocity();
-                if ((Vector2.Angle(blobAverageVelocity, throwDirection) < throwMaxAngleDiff) &&
+                Vector3 planeDirection = new Vector3(blobAverageVelocity.x, 0, blobAverageVelocity.y);
+                if ((Vector3.Angle(planeDirection, throwDirection) < throwMaxAngleDiff) &&
                     (blobAverageVelocity.magnitude >= throwMinMagnitude)) {
                     Throw();
                 }

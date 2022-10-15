@@ -65,7 +65,7 @@ public class ClientController : MonoBehaviour
 		while (true) {
 			material.SetTexture("_MainTex", currentClient.ClientSign);
 			Debug.Log("SIGH");
-			_characterSound.Call(currentClient.type, CharacterSoundType.SIGH, transform.position);
+			_characterSound.Call(currentClient.type, CharacterSoundType.ORDERING, transform.position);
 			bubble.SetActive(true);
 			yield return new WaitForSeconds(Random.Range(3f, 5f));
 			material.SetTexture("_MainTex", currentClient.ClientBase);

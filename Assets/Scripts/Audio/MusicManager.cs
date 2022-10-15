@@ -31,19 +31,23 @@ public class MusicManager : MonoBehaviour
     }
 
     private IEnumerator MusicCoroutine() {
-        for (int i = 0; i < songs.Length; i++) {
-            musicSource.clip = songs[i];
-            musicSource.Play();
-            musicChangeEvent.Call(i);
+        while (true) {
+            for (int i = 0; i < songs.Length; i++) {
+                musicSource.clip = songs[i];
+                musicSource.Play();
+                musicChangeEvent.Call(i);
 
-            while (musicSource.isPlaying) {
-                yield return new WaitForSeconds(0.5f);
-            }
+                while (musicSource.isPlaying) {
+                    yield return new WaitForSeconds(0.5f);
+                }
 
-            if (i != (songs.Length - 1)) {
-                yield return new WaitForSeconds(silenceBetweenSongs);
+                if (true || (i != (songs.Length - 1))) {
+                    yield return new WaitForSeconds(silenceBetweenSongs);
+                }
             }
+            
         }
+        
 
         allMusicPlayedEvent.Call();
     }
